@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>AutoAI — умный подбор автомобиля</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-icon">A</span>
+      <span>Auto<span class="brand-accent">AI</span><small>Умный подбор автомобилей</small></span>
+    </a>
+    <span class="status"><span class="status-dot"></span> ИИ-консультант</span>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <div class="eyebrow">ПЕРСОНАЛЬНЫЙ АВТОПОДБОР</div>
+      <h1>Найдём автомобиль<br><span>под твои задачи</span></h1>
+      <p>Расскажи, какую машину ищешь. ИИ разберёт пожелания и подберёт варианты из базы.</p>
+      <div class="quick-prompts">
+        <button class="prompt-chip" data-prompt="Подбери кроссовер до 15 миллионов тенге, не старше 2022 года">Кроссовер до 15 млн ₸</button>
+        <button class="prompt-chip" data-prompt="Хочу седан до 12 миллионов тенге для города">Седан для города</button>
+        <button class="prompt-chip" data-prompt="Какие Toyota есть в базе до 20 миллионов тенге?">Toyota до 20 млн ₸</button>
+      </div>
+    </section>
+
+    <section class="chat-panel">
+      <div class="chat-heading">
+        <div class="assistant-avatar">✦</div>
+        <div><h2>Чат с AutoAI</h2><p>Опиши пожелания обычными словами</p></div>
+        <button id="clearChat" class="icon-button" title="Очистить чат" aria-label="Очистить чат">↻</button>
+      </div>
+
+      <div id="chatMessages" class="chat-messages" aria-live="polite">
+        <div class="message assistant-message">
+          <div class="message-avatar">✦</div>
+          <div class="message-content">
+            Привет! Я помогу подобрать автомобиль. Напиши бюджет, желаемый кузов, год выпуска или просто расскажи, для чего нужна машина.
+          </div>
+        </div>
+      </div>
+
+      <form id="chatForm" class="chat-form">
+        <label class="sr-only" for="userMessage">Твой запрос</label>
+        <textarea id="userMessage" rows="1" maxlength="2000" placeholder="Например: нужна семейная машина до 14 млн ₸..." required></textarea>
+        <button id="sendButton" type="submit" aria-label="Отправить сообщение">➤</button>
+      </form>
+      <p class="disclaimer">ИИ может ошибаться. Цены и автомобили в базе приведены для демонстрации.</p>
+    </section>
+
+    <section class="results-section">
+      <div class="results-title">
+        <div><div class="eyebrow">ПОДБОРКА</div><h2>Подходящие автомобили</h2></div>
+        <span id="resultCount" class="result-count">Пока нет результатов</span>
+      </div>
+      <div id="carsContainer" class="cars-container">
+        <div class="empty-state">
+          <div class="empty-icon">⌕</div>
+          <h3>Здесь появятся варианты</h3>
+          <p>Отправь запрос в чат, и ИИ подберёт машины из базы.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>AutoAI · Учебный проект по разработке информационной системы</footer>
+  <script src="/script.js"></script>
+</body>
+</html>
